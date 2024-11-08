@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/header.ejs') %>
+
+
+<body>
+
+  
+  <%- include('./partials/nav.ejs') %>
+
+
+  <div class="hero-section">
+
+
+    <img src="/images/download.jpg" alt="Hero Image">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+      <h1>Welcome to CineTrac</h1>
+      <p>Discover the latest and greatest movies</p>
+      <a href="/form"><button class="hero-btn">Create Catalog</button></a>
+
+    </div>
+
+
+  </div>
+
+
+  
+  <div class="container">
+
+
+    <div class="row">
+
+      <div class="col-md-12">
+        <h2 class="section-title">Featured Movies</h2>
+      </div>
+
+    </div>
+
+
+    <div class="row">
+
+      <% catalog.forEach(movie => { %>
+
+        <div class="col-md-4">
+
+          <div class="card">
+
+            <img src="<%= movie.image %>" class="card-img-top" alt="<%= movie.title %>">
+
+            <div class="card-body">
+
+              <h5 class="card-title"><%= movie.title %></h5>
+              <a href="/readmore/<%= movie.id %>" class="btn btn-primary">Read More</a> 
+
+            </div>
+
+          </div>
+
+        </div>
+
+      <% }); %>
+
+    </div>
+
+  </div>
+
+
+
+ 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+ 
+  
+</body>
+</html>
+
